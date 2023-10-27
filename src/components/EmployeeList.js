@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import EmployeeService from "../services/EmployeeService";
 import Employee from "./Employee";
+import IncDec from "./IncDecComponent";
 
 const EmployeeList = () => {
   const navigate = useNavigate();
@@ -56,6 +57,9 @@ const EmployeeList = () => {
               <th className="text-left font-medium text-gray-500 uppercase tracking-wider py-3 px-6">
                 Email ID
               </th>
+              <th className="text-left font-medium text-gray-500 uppercase tracking-wider py-3 px-6">
+                Phone no
+              </th>
               <th className="text-right font-medium text-gray-500 uppercase tracking-wider py-3 px-6">
                 Actions
               </th>
@@ -73,6 +77,7 @@ const EmployeeList = () => {
           )}
         </table>
       </div>
+      <IncDec></IncDec>
     </div>
   );
 };

@@ -8,9 +8,10 @@ const AddEmployee = () => {
     firstName: "",
     lastName: "",
     emailId: "",
+    phone:"",
   });
 
-  const navigaye = useNavigate();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -22,7 +23,7 @@ const AddEmployee = () => {
     EmployeeService.saveEmployee(employee)
       .then((response) => {
         console.log(response);
-        navigaye("/employeeList");
+        navigate("/employeeList");
       })
       .catch((error) => {
         console.log(error);
@@ -36,6 +37,7 @@ const AddEmployee = () => {
       firstName: "",
       lastName: "",
       emailId: "",
+      phone:"",
     });
   };
 
@@ -75,6 +77,17 @@ const AddEmployee = () => {
             type="email"
             name="emailId"
             value={employee.emailId}
+            onChange={(e) => handleChange(e)}
+            className="h-10 w-96 border mt-2 px-2 py-2"></input>
+        </div>
+        <div className="items-center justify-center h-14 w-full my-4">
+          <label className="block text-gray-600 text-sm font-normal">
+            Phone
+          </label>
+          <input
+            type="phone"
+            name="phone"
+            value={employee.phone}
             onChange={(e) => handleChange(e)}
             className="h-10 w-96 border mt-2 px-2 py-2"></input>
         </div>

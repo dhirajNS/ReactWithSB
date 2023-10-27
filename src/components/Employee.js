@@ -19,6 +19,9 @@ const Employee = ({ employee, deleteEmployee }) => {
       <td className="text-left px-6 py-4 whitespace-nowrap">
         <div className="text-sm text-gray-500">{employee.emailId}</div>
       </td>
+      <td className="text-left px-6 py-4 whitespace-nowrap">
+        <div className="text-sm text-gray-500">{employee.phone}</div>
+      </td>
       <td className="text-right px-6 py-4 whitespace-nowrap font-medium text-sm">
         <a
           onClick={(e, id) => editEmployee(e, employee.id)}
